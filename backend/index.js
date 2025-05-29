@@ -5,8 +5,12 @@ require("dotenv").config();
 const app = express();
 
 app.use(express.json());
-app.use(cors());
-
+// app.use(cors());
+app.use(cors({
+  origin: ["https://job-portal-a2cb.onrender.com", "http://localhost:5173"],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  credentials: true
+}));
 
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const uri =
