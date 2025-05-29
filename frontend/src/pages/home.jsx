@@ -15,7 +15,7 @@ const Home = () => {
   useEffect(() => {
     setIsLoading(true);
     // fetch("jobs.json")
-    fetch("http://localhost:3030/all-jobs")
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/all-jobs`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data)
